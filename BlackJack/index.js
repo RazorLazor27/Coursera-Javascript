@@ -1,6 +1,6 @@
 // Crear todas las 52 cartas posibles
 
-const mazo = [0,1,2,3,4,5,6,7,8,9,10,10,10,10]
+const mazo = [1,2,3,4,5,6,7,8,9,10,10,10,10]
 
 const colores = ["Corazon", "Pica", "Diamante", "Trebol"]
 
@@ -31,6 +31,7 @@ function checkval(number){
         window.location.reload()
     } else if (number == 21){
         alert("BlackJack, ha esperar lo que tiene el dealer")
+        hold();
     }
 }
 
@@ -72,6 +73,7 @@ function hold() {
 
         if (dealerSum > 21){
             alert("El jugador ha ganado, Victoria!");
+            
             return;
         }
         setTimeout(loop, 1000);
