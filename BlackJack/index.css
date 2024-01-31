@@ -40,7 +40,10 @@ button {
 }
 
 #reset-btn{
-    background: darkorange;
+    background: rgb(227, 133, 18);
+    display: none;
+    position: fixed;
+    
 }
 #reset_list-btn {
     background: darkmagenta;

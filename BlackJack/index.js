@@ -4,6 +4,8 @@ const mazo = [1,2,3,4,5,6,7,8,9,10,10,10,10]
 
 const colores = ["Corazon", "Pica", "Diamante", "Trebol"]
 
+let winner = false;
+let resetbtn = document.getElementById("reset-btn");
 
 
 let dealerNum = document.getElementById("dealerNum")
@@ -63,17 +65,22 @@ function hold() {
 
         if ((dealerSum > playerSum && dealerSum <22) || (dealerSum == 21 && playerSum != 21)){
             alert("La casa gana, Derrota!");
+            winner = true;
+            reset()
             // window.location.reload();
 
         }
         if ((playerSum == dealerSum) && (playerSum != 21)){
             alert("Ha ocurrido un empate!");
+            winner = true;
+            reset();
             // window.location.reload();
         }
 
         if (dealerSum > 21){
             alert("El jugador ha ganado, Victoria!");
-            
+            winner = true;
+            reset();
             return;
         }
         setTimeout(loop, 1000);
@@ -81,5 +88,18 @@ function hold() {
 
     setTimeout(loop, 1000);
 }
+
+function reset(){
+    if(winner) {
+        resetbtn.style.display = "block";
+    } else {
+        resetbtn.style.display = "none";
+    }
+}
+
+function resetPage(){
+    location.reload();
+}
+
 
 
